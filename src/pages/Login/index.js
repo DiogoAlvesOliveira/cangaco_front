@@ -17,7 +17,7 @@ export default function Login() {
 
     if(cpf.length < 11 || cpf.length >14 ){
       formErrors = true;
-      toast.error('Nome deve ter entre 11 e 14 caracteres');
+      toast.error('CPF deve ter entre 11 e 14 caracteres');
     }
 
     if(password.length < 3 || password.length >255 ){
@@ -43,13 +43,14 @@ export default function Login() {
     }
   }
   return (
-  
+    <>
     <Container>
-      <h1>Login</h1>
+      <h1 className='login'>Login</h1>
+      
       <Form onSubmit={handleSubmit}>
         <label htmlFor="nome">
           CPF:
-          <input type="text" value={cpf} onChange={e=> setCpf(e.target.value)} placeholder="Seu nome"/>
+          <input type="text" value={cpf} onChange={e=> setCpf(e.target.value)} placeholder="Seu CPF"/>
         </label>
         <label htmlFor="password">
           Senha:
@@ -59,5 +60,7 @@ export default function Login() {
       </Form>
 
     </Container>
+    </>
+  
   );
 }

@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 import * as colors from '../../config/colors';
 
-export const Paragrafo = styled.p`
-  font-size: 80px;
-`;
 export const Form = styled.form`
   display: flex;
   flex-direction: column;

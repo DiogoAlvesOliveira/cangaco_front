@@ -60,4 +60,8 @@ export const Container = styled.section`
   padding: 30px;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  h1{
+    text-align:center;
+  }
 `;

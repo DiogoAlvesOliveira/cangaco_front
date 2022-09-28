@@ -15,7 +15,6 @@ return (
   <Provider store={store}>
     <PersistGate persistor={persistor}>
     <Router history={history}>
-      <Header />
       <Routes />
       <GlobalStyles />
       <ToastContainer autoClose={3000} className="toast-container" />
