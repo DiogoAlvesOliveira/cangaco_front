@@ -9,15 +9,15 @@ import history from '../../services/history';
 import Header from '../../components/Header';
 
 export default function Login() {
-  const [nome, setNome] = useState('');
+  const [cpf, setCpf] = useState('');
   const [password, setPassword] = useState('');
   async function handleSubmit(e){
     e.preventDefault();
     let formErrors = false;
 
-    if(nome.length < 3 || nome.length >255 ){
+    if(cpf.length < 11 || cpf.length >14 ){
       formErrors = true;
-      toast.error('Nome deve ter entre 3 e 255 caracteres');
+      toast.error('Nome deve ter entre 11 e 14 caracteres');
     }
 
     if(password.length < 3 || password.length >255 ){
@@ -28,7 +28,7 @@ export default function Login() {
 
     try{
       const response = await axios.post('/users/', {
-        nome,
+        cpf,
         password,
       });
       toast.success('Cadastro Realizado!');
@@ -46,10 +46,10 @@ export default function Login() {
   
     <Container>
       <h1>Login</h1>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <label htmlFor="nome">
-          Nome:
-          <input type="text" value={nome} onChange={e=> setNome(e.target.value)} placeholder="Seu nome"/>
+          CPF:
+          <input type="text" value={cpf} onChange={e=> setCpf(e.target.value)} placeholder="Seu nome"/>
         </label>
         <label htmlFor="password">
           Senha:
